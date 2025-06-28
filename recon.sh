@@ -1,8 +1,14 @@
 #!/bin/bash
+# Recon Script by: phantomroot
+
+echo "==============================="
+echo "🔍 Subdomain Recon by PhantomRoot"
+echo "==============================="
 
 # =============================
 # 🔍 Subdomain Recon Automation
 # =============================
+
 
 # Local output directory (not root/home)
 WORKDIR="./recon_output"
@@ -56,7 +62,7 @@ if [ ! -d "$WORKDIR/Sublist3r" ]; then
   pip install -r "$WORKDIR/Sublist3r/requirements.txt"
 
   # FIX: Clean regex escape warnings
-  sed -i "s/<cite.*?>\(.*?\)<\\/cite>/r'<cite.*?>(.*?)<\/cite>'/g" "$WORKDIR/Sublist3r/sublist3r.py"
+  sed -i "s/<cite.*?>\\(.*?\\)<\\\\/cite>/r'<cite.*?>(.*?)<\\/cite>'/g" "$WORKDIR/Sublist3r/sublist3r.py"
 fi
 
 # ===========================
